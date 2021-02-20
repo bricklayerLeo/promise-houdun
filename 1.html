@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <script src="HD.js"></script>
+</head>
+
+<body>
+    <h1>promise</h1>
+    <h1>《后盾人》教程 看到了p10,可以看p11</h1>
+</body>
+<script>
+    // setTimeout(() => {
+    //     console.log('sss');
+    // })
+    let p = new HD((resolve, reject) => {
+        // console.log('a');
+        // setTimeout(() => {
+        resolve('解决')
+        // console.log('aaaaa');
+        // }, 1000);
+        // reject('拒绝')
+    }).then(
+        res => {
+            console.log('===res1====', res);
+            return res
+        },
+        rea => {
+            console.log(rea);
+        }
+    ).then(res => {
+        console.log('====res====', res);
+    })
+    // console.log('p');
+</script>
+
+</html>
