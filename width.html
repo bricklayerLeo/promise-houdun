@@ -1,0 +1,112 @@
+<html>
+
+<head>
+    <script src="p.js"></script>
+    <style>
+        .parent {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .column {
+            flex: 0 0 18%;
+            /* width: 20%; */
+            height: 6rem;
+            display: inline-block;
+            background: #ededee;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .bt_classify_name_empty {
+            width: 0px;
+            height: 0px;
+        }
+
+        /* .column+.column {
+            margin-left: 20px;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <div class="column">
+            <p>1</p>
+        </div>
+        <div class="column">
+            <p>2</p>
+        </div>
+        <div class="column">
+            <p>3</p>
+        </div>
+        <div class="column">
+            <p>4</p>
+        </div>
+        <div class="column">
+            <p>4</p>
+        </div>
+        <div class="column">
+            <p>4</p>
+        </div>
+        <div class="column">
+            <p>4</p>
+        </div>
+
+        <div class="column">
+            <p>4</p>
+        </div>
+        <div class="column">
+            <p>4</p>
+        </div>
+        <div class="column">
+            <p>4</p>
+        </div>
+
+        <div class="column">
+            <p>4</p>
+        </div>
+        <div class="column">
+            <p>4</p>
+        </div>
+        <div class="column">
+            <p>4</p>
+        </div>
+        <!-- <div class="column">
+            <p>5</p>
+        </div> -->
+        <div class=" column bt_classify_name_empty">
+            <!-- <p>5</p> -->
+        </div>
+        <div class=" column bt_classify_name_empty">
+        </div>
+        <div class=" column bt_classify_name_empty">
+        </div>
+        <div class=" column bt_classify_name_empty">
+        </div>
+    </div>
+
+</body>
+<script>
+    let p = new PP((resolve, reject) => {
+        console.log('222');
+        setTimeout(() => {
+            resolve(1)
+        }, 3000)
+    }).then(res => {
+        console.log(res, '11');
+    })
+    console.log('333');
+
+    // let a = new Promise((resolve, reject) => {
+    //     console.log('222');
+    //     resolve(1)
+    // }).then(res => {
+    //     console.log(res, '11');
+    // })
+    // console.log('333');
+</script>
+
+</html>

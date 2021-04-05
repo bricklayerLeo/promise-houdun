@@ -9,27 +9,32 @@
     <h1>《后盾人》教程 看到了p10,可以看p11</h1>
 </body>
 <script>
-    // setTimeout(() => {
-    //     console.log('sss');
-    // })
-    let p = new HD((resolve, reject) => {
+    let Promise = HD
+    let p = new Promise((resolve, reject) => {
         // console.log('a');
         // setTimeout(() => {
         resolve('解决')
-        // console.log('aaaaa');
+        //     console.log('aaaaa');
         // }, 1000);
         // reject('拒绝')
-    }).then(
-        res => {
-            console.log('===res1====', res);
-            return res
-        },
-        rea => {
-            console.log(rea);
-        }
-    ).then(res => {
-        console.log('====res====', res);
     })
+        // .then()
+        .then(
+            res => {
+                console.log('===res1====', res);
+                return res
+            },
+            rea => {
+                console.log(rea);
+                return rea
+            }
+        ).then(res => {
+            console.log('====res2====', res);
+        },
+            rea => {
+                console.log(rea);
+                return rea
+            })
     // console.log('p');
 </script>
 

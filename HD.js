@@ -36,23 +36,21 @@ class HD {
     }
     then(onFulfilled, onRejected) {
         if (typeof onFulfilled != 'function') {
-            onFulfilled = () => { }
+            onFulfilled = () => this.value
         }
         if (typeof onRejected != 'function') {
-            onRejected = () => { }
+            onRejected = () => this.value
         }
         return new HD((resolve, reject) => {
             if (this.status === HD.PENDING) {
                 this.callBackArr.push(
                     {
-                        // onFulfilled,
-                        // onRejected
                         onFulfilled: value => {
                             try {
                                 let result = onFulfilled(value)
                                 resolve(result)
                             } catch (error) {
-                                onRejected(error)
+                                reject(error)
                             }
                         },
                         onRejected: value => {
@@ -60,7 +58,7 @@ class HD {
                                 let result = onRejected(value)
                                 resolve(result)
                             } catch (error) {
-                                onRejected(error)
+                                reject(error)
                             }
                         }
                     }
@@ -69,11 +67,10 @@ class HD {
             if (this.status === HD.FUFILLED) {
                 setTimeout(() => {
                     try {
-                        // onFulfilled(this.value)
                         let result = onFulfilled(this.value)
                         resolve(result)
                     } catch (error) {
-                        onRejected(error)
+                        reject(error)
                     }
                 })
             }
@@ -83,7 +80,7 @@ class HD {
                         let result = onRejected(this.value)
                         resolve(result)
                     } catch (error) {
-                        onRejected(error)
+                        reject(error)
                     }
                 })
             }
