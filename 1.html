@@ -13,21 +13,25 @@
     let p = new Promise((resolve, reject) => {
         // console.log('a');
         // setTimeout(() => {
-        resolve('解决')
+        // resolve('解决')
         //     console.log('aaaaa');
         // }, 1000);
-        // reject('拒绝')
+        reject('拒绝')
     })
         // .then()
-        .then(
-            res => {
-                console.log('===res1====', res);
-                return res
-            },
-            rea => {
-                console.log(rea);
-                return rea
-            }
+        .then(res => {
+            return new Promise((resolve, reject) => {
+                resolve('草泥马的')
+            })
+            // res => {
+            //     console.log('===res1====', res);
+            //     return res
+            // },
+            //     rea => {
+            //         console.log(rea);
+            //         return rea
+            //     }
+        }
         ).then(res => {
             console.log('====res2====', res);
         },
