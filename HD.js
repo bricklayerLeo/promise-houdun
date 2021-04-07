@@ -77,20 +77,6 @@ class HD {
             if (this.status === HD.FUFILLED) {
                 setTimeout(() => {
                     this.resolvePromise(promise, onFulfilled(this.value), resolve, reject)
-                    // try {
-                    //     let result = onFulfilled(this.value)
-                    //     if (result instanceof HD) {
-                    //         result.then(value => {
-                    //             resolve(value)
-                    //         }, reason => {
-                    //             resolve(reason)
-                    //         })
-                    //     } else {
-                    //         resolve(result)
-                    //     }
-                    // } catch (error) {
-                    //     reject(error)
-                    // }
                 })
             }
             if (this.status === HD.REJECTED) {
